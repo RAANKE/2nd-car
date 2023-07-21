@@ -42,14 +42,31 @@ void loop() {
 
   motorControl(255, HIGH, LOW);
   int a = us(echo1);
+  Serial.print("distance1 :");
+  Serial.println(a);
   int b = us(echo2);
   int c = us(echo3);
+  Serial.print("distance2 :");
+  Serial.println(b);
+  Serial.print("distance3 :");
+  Serial.println(c);
   int d = b + 10;
   int e= b - 10;
   if(a<800){
     if(c>d){
       while(a<2000){
         motorControl(200, HIGH, LOW);
+        a = us(echo1);
+        b = us(echo2);
+        c = us(echo3);
+        Serial.print("distance1 :");
+        Serial.println(a);
+        Serial.print("distance2 :");
+        Serial.println(b);
+        Serial.print("distance3 :");
+        Serial.println(c);
+        int d = b + 10;
+        int e= b - 10;
         if (deg<90){
           int degree = 90-deg;
           deg = deg + degree;
@@ -70,6 +87,17 @@ void loop() {
     if(b>e){
       while(a<2000){
         motorControl(200, HIGH, LOW);
+        a = us(echo1);
+        b = us(echo2);
+        c = us(echo3);
+        Serial.print("distance1 :");
+        Serial.println(a);
+        Serial.print("distance2 :");
+        Serial.println(b);
+        Serial.print("distance3 :");
+        Serial.println(c);
+        int d = b + 10;
+        int e= b - 10;
         int f = -90;
         if (deg>f){
           int degree = 90+deg;
